@@ -95,4 +95,48 @@ public class TestPerson {
         Integer actual = person.getAge();
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testForAll() {
+        // Given
+        Person person = new Person();
+        Integer expectedAge = 5;
+        String expectedName = "Mike";
+        String expectedLast = "Gawronski";
+        String middleName = "Joseph";
+        String expectedDOB = "08/27/95";
+        int height = 170;
+        int weight = 250;
+
+        // When
+        person.setweight(weight);
+        person.setAge(expectedAge);
+        person.setBirth(expectedDOB);
+        person.setheightInInches(height);
+        person.setlastName(expectedLast);
+        person.setmiddleName(middleName);
+        person.setName(expectedName);
+
+        // Then
+        Integer actualAge = 5;
+        String actualFirst = "Mike";
+        String actualLast = "Gawronski";
+        String actualMiddle = "Joseph";
+        String actualDOB = "08/27/95";
+        int actualHeight = 170;
+        int actualWeight = 250;
+
+        Assert.assertEquals(expectedAge,actualAge);
+        Assert.assertEquals(expectedName,actualFirst);
+        Assert.assertEquals(expectedDOB,actualDOB);
+        Assert.assertEquals(expectedLast,actualLast);
+        Assert.assertEquals(middleName,actualMiddle);
+        Assert.assertEquals(weight,actualWeight);
+        Assert.assertEquals(height,actualHeight);
+
+        //i suppose i should of made seperate methods to call each one and called them seperatly/n
+        //if future me sees this make it better.
+
+
+    }
 }
